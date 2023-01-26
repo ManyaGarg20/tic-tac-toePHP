@@ -1,0 +1,177 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, 'Times New Roman', serif;
+}
+
+nav ul li {
+    list-style-type: none;
+    padding: 1vw;
+
+}
+
+nav {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 12vh;
+    width: 100vw;
+}
+
+.brand {
+    flex: 1.5;
+}
+
+.options {
+    flex: 1;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.gameContainer {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    width: auto;
+    justify-content: center;
+    /* background-image: url("/img_bg.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    position: relative;
+    ;
+}
+
+.box {
+    border: 3px solid rgb(54, 53, 53);
+    font-size: 3.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(189, 1, 1);
+}
+
+.box:hover {
+    background-color: rgb(124, 124, 124);
+    font-size: 5vw;
+    transition: 1s;
+}
+
+.gameInfo {
+    color: rgb(114, 111, 111);
+}
+
+.imgbox img {
+    width: 0px;
+    transition: width 1s ease-in-out;
+    margin: 30px;
+    box-shadow: 2px 3px 2px 2px rgb(100, 100, 100);
+}
+
+#reset {
+    background-color: rgb(83, 83, 83);
+    color: white;
+    font-size: 2.3em;
+    padding: 0.5vw 1vw;
+    margin: 2vw;
+    box-shadow: 2px 2px 3px 1px rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+.info {
+    font-size: 47px;
+}
+
+.gameWon {
+    font-size: 62px;
+    color: red;
+    background-color: rgb(252, 193, 193);
+    box-shadow: 7px 4px 5px 0px rgb(129, 128, 128);
+    animation: animate 1.1s infinite;
+}
+
+/*  for annimation */
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.br-0 {
+    border-right: 0ch;
+}
+
+.bl-0 {
+    border-left: 0ch;
+}
+
+.bt-0 {
+    border-top: 0ch;
+}
+
+.bb-0 {
+    border-bottom: 0ch;
+}
+
+.line {
+    /* display: none; */
+    background-color: rgb(243, 64, 64);
+    height: 7px;
+    width: 0vw;
+ transition: width 1s ease-in-out;
+    position: absolute;
+}
+
+#vol{
+    cursor: pointer;
+    font-size: larger;
+}
+
+/*  media query before 510 X 350 , width * height*/
+@media screen and (max-width: 510px) {
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+
+    .gameInfo {
+        margin-top: 20px;
+    }
+    
+    .info {
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    nav {
+        height: 30vh;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+}
