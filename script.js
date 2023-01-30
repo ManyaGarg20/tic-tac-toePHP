@@ -27,9 +27,21 @@ const checkWin=()=>{
       ];
 
     
+
 wins.forEach( (e )=>{
 if((boxes[e[0]].innerText===boxes[e[1]].innerText) && (boxes[e[1]].innerText===boxes[e[2]].innerText) && (boxes[e[0]].innerText!=="")){
-document.querySelector(".info").innerText = boxes[e[0]].innerText + " Won";
+  document.querySelector(".info").innerText = boxes[e[0]].innerText + " Won";
+  
+  // ajax post req
+  var name =boxes[e[0]].innerText;
+//   console.log(name);
+// $.post( 'action.php' , {postname:name},
+// function(data,status){
+// //  $(".info").html(data + " Won");
+// console.log("winner shown");
+// });
+// console.log("hello");
+document.cookie = "cname =" + name;
 gameEnd=true;
 gameover.play();
 document.querySelector(".imgbox").getElementsByTagName("img")[0].style.width ="250px";

@@ -41,9 +41,8 @@
 $sql=  "select * from player_info";
 $result = mysqli_query($conn , $sql);
 while($res=mysqli_fetch_assoc($result)){
- echo "<tr> <td>".$res['PLAYER1']."</td> <td>".$res['PLAYER2']."</td> <td>X</td>
+ echo "<tr> <td>".$res['PLAYER1']."</td> <td>".$res['PLAYER2']."</td> <td>".$res['WINNER']."</td>
  </tr> " ;
- echo "<br>";
 } 
 ?>
    </tbody>

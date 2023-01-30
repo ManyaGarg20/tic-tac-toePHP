@@ -1,5 +1,4 @@
 <?php
-
 	// Database connection
     $servername = "localhost";
     $username = "root";
@@ -9,5 +8,4 @@
     if(!$conn){
         die("sorry connection failed");
     }
-
 ?>
