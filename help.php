@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCSS.css" type="text/css">
+
 </head>
 <body>
     <nav>
@@ -23,5 +24,9 @@
             </ul>
         </div>
     </nav>
+
+     <!-- footer start -->
+  <div class="copy-rights">all &copy; rights reserved </div>
+  <!-- footer end -->
 </body>
 </html>

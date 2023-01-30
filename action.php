@@ -8,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCSS.css" type="text/css">
     <script src="jquery-3.6.0.js"></script> 
+
 </head>
 <body>
 
@@ -76,6 +77,10 @@
             </div>
         </div>
     </div>
+
+ <!-- footer start -->
+ <div class="copy-rights">all &copy; rights reserved </div>
+  <!-- footer end -->
 
 <script >
 

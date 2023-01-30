@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score-Board</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCSS.css" type="text/css">
+
 </head>
 <body>
     <nav>
@@ -28,7 +29,7 @@
         </div>
     </nav>
 
-    <table id="table"> 
+    <table id="table" > 
     <thead>
     <tr>
           <th scope="col">Player1: </th>
@@ -47,6 +48,10 @@ while($res=mysqli_fetch_assoc($result)){
 ?>
    </tbody>
       </table>
+
+       <!-- footer start -->
+  <div class="copy-rights">all &copy; rights reserved </div>
+  <!-- footer end -->
 
       <script src="https://kit.fontawesome.com/8f9fff2a16.js" crossorigin="anonymous"></script>
 

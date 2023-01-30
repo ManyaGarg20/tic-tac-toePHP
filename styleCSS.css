@@ -175,3 +175,47 @@ a {
         flex-wrap: wrap;
     }
 }
+/* copy-rights footer */
+.copy-rights{
+    color: #000000;
+    opacity: 0.7;
+    position: fixed; 
+    top:610px;
+    left: 600px;
+    }
+
+/* instruction */
+
+.instr-box{
+    transition: transform .2s;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid rgb(89, 89, 89);
+    background-color: rgb(159, 159, 159);
+    box-shadow: 5px 4px 4px 2px rgb(115, 114, 114);
+    margin: 5vh 14vw;
+}
+.instr-box:hover{
+    transform: scale(1.2);
+}
+.h3-inst{
+    text-align: center;
+    text-decoration:underline;
+}
+
+/* scoreboard */
+table {
+    border: 1px solid;
+    width: 55vw;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 10px 5px 10px 7px black;
+    background-color:#d7d7d7
+}
+td,th {
+    border: 1px solid;
+    width: 55vw;
+    padding: 5px;
+    margin: 2px;
+    box-shadow: 1px 2px 2px black;
+    /* background-color:#cdcdcd */
+}
