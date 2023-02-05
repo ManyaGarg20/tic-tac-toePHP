@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="instruction.php">Instructions</a></li>
-                <li><a href="help.php">Help</a></li>
+                <!-- <li><a href="help.php">Help</a></li> -->
                 <li><a href="scoreboard.php">ScoreBoard</a></li>
             </ul>
         </div>
