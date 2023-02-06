@@ -1,5 +1,44 @@
 <?php include 'connection.php'; ?>
 
+<?php
+    $Player1 = $_POST['inp1'];
+    $Player2 = $_POST['inp2'];
+    $winner= 'A' ;
+
+// here the ajax req sending var name of winner will be sent to databse
+// echo $_POST['postname'];
+// if(isset($_POST['postname'])){
+//     if($_POST['postname']=='X'){
+//         $winner=$Player1;
+//     }
+//     else if($_POST['postname']=='O'){
+//         $winner=$Player2;
+//     }
+// }
+// else{
+//     echo "eroorrriee";
+// }
+
+$winner_name =$_COOKIE['cname'];
+if($winner_name=='X'){
+    $winner = $Player1;
+}
+else if($winner_name=='O'){
+    $winner = $Player2;
+}
+
+//set timeout laga kr hi databaese main bhi daalo , iska code banana hai
+
+    // $sql1="INSERT INTO player_info(player1,player2,winner) VALUES ('$Player1','$Player2' , 'X')";
+   if($winner == $Player1 || $winner ==$Player2 ){
+       $sql1="INSERT INTO player_info(player1,player2,winner) VALUES ('$Player1','$Player2' , '$winner')";
+       $result1 = mysqli_query($conn, $sql1);
+       if(!$result1){
+           echo "<br> error--" . mysqli_error($conn);
+       }
+   }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,30 +118,25 @@
  <div class="copy-rights">all &copy; rights reserved </div>
   <!-- footer end -->
 
-<script >
-
+<script >  
+    console.log("welcome to the game");
+    let audioTurn = new Audio("audio/turn_sound.wav");
+    let gameover= new Audio("audio/win_sound.wav");
+    let music = new Audio("audio/music.mp3");
+    let gameEnd=false;
+    
+    let vol=document.getElementById("vol");
+    
+    music.muted=true;
+    music.autoplay;
+    music.play();
+    music.muted =false;
+    music.volume=0.4;
+    
     // Set a Cookie
-    function setCookie(cName, cValue) {
+function setCookie(cName, cValue) {
         document.cookie = cName + "=" + cValue ;
     }
-    
- let username = '';
-// Apply setCookie
-setCookie('cname', username);
-
-console.log("welcome to the game");
-let audioTurn = new Audio("audio/turn_sound.wav");
-let gameover= new Audio("audio/win_sound.wav");
-let music = new Audio("audio/music.mp3");
-let gameEnd=false;
-
-let vol=document.getElementById("vol");
-
-music.muted=true;
-music.autoplay;
-music.play();
-music.muted =false;
-music.volume=0.4;
 
 let turn ="X";
 // function to change turn
@@ -130,9 +164,9 @@ if((boxes[e[0]].innerText===boxes[e[1]].innerText) && (boxes[e[1]].innerText===b
 // //  $(".info").html(data + " Won");
 // console.log("winner shown");
 // });
-// document.cookie = "cname =" + name;
-setCookie('cname', name);
 
+document.cookie = "cname =" + name;
+// setCookie('cname', name);
 
 gameEnd=true;
 gameover.play();
@@ -145,48 +179,11 @@ document.querySelector(".line").style.width= "24vw";
 
 document.querySelector(".line").style.transform= `translate(${e[3]}vw,${e[4]}vw) rotate(${e[5]}deg)`;
 
-<?php
-    $Player1 = $_POST['inp1'];
-    $Player2 = $_POST['inp2'];
-    $winner= 'A' ;
 
-// here the ajax req sending var name of winner will be sent to databse
-// echo $_POST['postname'];
-// if(isset($_POST['postname'])){
-//     if($_POST['postname']=='X'){
-//         $winner=$Player1;
-//     }
-//     else if($_POST['postname']=='O'){
-//         $winner=$Player2;
-//     }
-// }
-// else{
-//     echo "eroorrriee";
-// }
+setTimeout(function(){
+   window.location.reload();
+}, 3000);
 
-$winner_name =$_COOKIE['cname'];
-if($winner_name=='X'){
-    $winner = $Player1;
-}
-else{
-    $winner = $Player1;
-}
-
-//set timeout laga kr hi databaese main bhi daalo , iska code banana hai
-
-    // $sql1="INSERT INTO player_info(player1,player2,winner) VALUES ('$Player1','$Player2' , 'X')";
-    $sql1="INSERT INTO player_info(player1,player2,winner) VALUES ('$Player1','$Player2' , '$winner')";
-   
-    $result1 = mysqli_query($conn, $sql1);
-    if(!$result1){
-        echo "<br> error--" . mysqli_error($conn);
-    }
-
-?>
-
-// setTimeout(function(){
-//    window.location.reload();
-// }, 5000);
 
 } 
 });
@@ -249,6 +246,5 @@ vol.classList.add('fa-microphone-slash');
 </script>
 
 <script src="https://kit.fontawesome.com/8f9fff2a16.js" crossorigin="anonymous"></script>
-
 </body>
 </html>
