@@ -7,7 +7,7 @@
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="styleCSS.css" type="text/css">
 </head>
-<body>
+<body >
     <nav>
         <div class="brand">
             <ul>
@@ -23,14 +23,17 @@
             </ul>
         </div>
     </nav>
-
-    <div class="scoreboard">
+    
+      <div class="scoreboard">
         <form action="action.php" method="POST" id="myForm">
-            <label for="inp1">Player1: </label>
-            <input type="text" name="inp1" id="inp1">
-
-            <label for="inp2">Player2: </label>
+        <div><label for="inp1">Player1: </label>
+            <input type="text" name="inp1" id="inp1"></div> 
+        
+<div>
+<label for="inp2">Player2: </label>
             <input type="text" name="inp2" id="inp2">
+</div>
+            
 
             <button id="submit" value="submit" name="submit">SUBMIT</button>
         </form>
